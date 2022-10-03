@@ -1,0 +1,66 @@
+<form>
+<p><strong>Below are some strategies you could've used in the game.</strong></p><p><br><strong>Let us know if you used the strategy, and if you did use it, when you used it (e.g. throughout the entire game, at the beginning only, block 3 only, etc.)</strong></p>
+<br>
+<br>
+<p>I wanted to collect a total number of gems on each planet. I left once I collected that number.</p>
+<input type='radio' name='planet_threshold' value='yes' checked> Yes<br>
+<input type='radio' name='planet_threshold' value='no'> No<br>
+
+<p>If yes, when did you use this strategy?<p>
+<textarea id='planet_threshold' cols=70 rows=5 /></textarea>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>I wanted to collect a certain number of gems per dig. I left the planet once the actual number of gems per dig dropped below that number.</p>
+<input type='radio' name='dig_threshold' value='yes' checked> Yes<br>
+<input type='radio' name='dig_threshold' value='no'> No<br>
+
+<p>If yes, when did you use this strategy?<p>
+<textarea id='dig_threshold' cols=70 rows=5 /></textarea>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>If I got more gems from a single dig than I expected, then I decided to stay. If I got less than expected, then I decided to leave.</p>
+<input type='radio' name='surprise' value='yes' checked> Yes<br>
+<input type='radio' name='surprise' value='no'> No<br>
+
+<p>If yes, when did you use this strategy?<p>
+<textarea id='surprise' cols=70 rows=5 /></textarea>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>If a planet seemed better than other planets, I stayed on that planet longer. If a planet seemed worse than other planets, I left that planet earlier.</p>
+<input type='radio' name='dynamic' value='yes' checked> Yes<br>
+<input type='radio' name='dynamic' value='no'> No<br>
+
+<p>If yes, when did you use this strategy?<p>
+<textarea id='dynamic' cols=70 rows=5 /></textarea>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>I used another strategy. (Please describe below)</p>
+<input type='radio' name='other' value='yes' checked> Yes<br>
+<input type='radio' name='other' value='no'> No<br>
+
+<p>Describe your strategy. When did you use this strategy?<p>
+<textarea id='other' cols=70 rows=5 /></textarea>
+
+
+
+</form>

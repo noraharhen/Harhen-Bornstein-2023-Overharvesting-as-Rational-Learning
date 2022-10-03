@@ -1,0 +1,54 @@
+<div id="wrapper">
+
+    <!--LOGIN FORM-->
+    <div name="login-form" class="login-form">
+        <!--HEADER-->
+        <div class="header">
+        <!--TITLE--><h1>Task Complete</h1><!--END TITLE-->
+        <!--DESCRIPTION--><span>You are almost done! Now just to answer some questions.</span><!-- END DESCRIPTION-->
+        </div>
+        <!--END HEADER-->
+
+        <!--CONTENT-->
+        <div class="content">
+
+            <div class="col1">
+                <div class="questionnaire">
+                    <p id = "toptext">Congratulations, you are finished!  You will be eligible for payment once you answer the following questions about your childhood.</p>
+
+                    <p id = "toptext">Answer yes or no to these questions regarding your childhood prior to age 12.</p>
+
+                    <form id="postquiz" action="debrief" method="post">
+
+                      <div class="question">
+                          <p class="yes_no">
+                              <br>
+                              I had a set morning routine on school days (i.e., I usually did the same thing each day to get ready).
+                            </p>
+                            <input type="radio" name="routine" id="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" name="routine" id="no">
+                            <label for="no">No/label>
+                      </div>
+
+                      <div class="question">
+                          <p class="yes_no">
+                              <br>
+                            My parents kept track of what I ate (e.g., made sure that I didn’t skip meals or tried to make sure I ate healthy food).                            </p>
+                            <input type="radio" name="routine" id="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" name="routine" id="no">
+                            <label for="no">No/label>
+                      </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+            <button type="button" id="continue" class="btn btn-warning btn-lg continue" name="continue">
+              Continue
+            </button>
+      </div>
+    </div> <!--END LOGIN FORM-->
+</div>

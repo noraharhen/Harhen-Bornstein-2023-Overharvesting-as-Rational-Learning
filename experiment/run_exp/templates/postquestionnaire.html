@@ -1,0 +1,55 @@
+<div id="wrapper">
+
+    <!--LOGIN FORM-->
+    <div name="login-form" class="login-form">
+        <!--HEADER-->
+        <div class="header">
+        <!--TITLE--><h1>Task Complete</h1><!--END TITLE-->
+        <!--DESCRIPTION--><span>You are almost done!</span><!-- END DESCRIPTION-->
+        </div>
+        <!--END HEADER-->
+
+        <!--CONTENT-->
+        <div class="content">
+
+            <div class="col1">
+                <div class="questionnaire">
+                    <p id = "toptext">Congratulations, you are finished!  You will be eligible for payment once you answer the following questions.</p>
+                    <form id="postquiz" action="debrief" method="post">
+                      <div class="question">
+                          <p class="questiontext">
+                              <br>
+                          If you had any particular strategies for playing the game, please give a brief description in your own words.
+                          </p>
+                          <textarea id="strategy" cols=80 rows=3 /></textarea>
+                      </div>
+                      <div class="question">
+                          <p class="questiontext">
+                          Did you find that anything changed about how you played the game over the course of the experiment?
+                          </p>
+                          <textarea id="changingstrategy" cols=80 rows=3 /></textarea>
+                      </div>
+                      <div class="question">
+                          <p class="questiontext">
+                              Do you have any other thoughts or suggestions about the task?
+                          </p>
+                          <textarea id="howtoimprove" cols=80 rows=3 /></textarea>
+                      </div>
+
+                      <div class="question">
+                          <p class="questiontext">
+                              <br>
+                          How old are you in years? Enter '-1' if you would prefer not to respond.
+                          </p>
+                          <input id="age" name="age" type="number" min="-1" style="height:45px; width:80px" />
+                      </div>
+
+                      </form>
+                </div>
+            </div>
+            <button type="button" id="continue" class="btn btn-warning btn-lg continue" name="continue">
+              Continue
+            </button>
+      </div>
+    </div> <!--END LOGIN FORM-->
+</div>

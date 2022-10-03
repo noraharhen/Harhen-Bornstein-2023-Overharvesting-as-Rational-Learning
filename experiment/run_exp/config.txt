@@ -1,0 +1,53 @@
+[HIT Configuration]
+title = Space Mining task
+description = Mine for space treasure across the galaxy. This HIT takes on average around 45 min to complete. You can win up to $5 in bonus payment.
+amt_keywords = Decision-making, Learning, Memory, Psychology
+lifetime = 24
+us_only = true
+approve_requirement = 99
+number_hits_approved = 0
+require_master_workers = false
+contact_email_on_error = nharhen@uci.edu
+ad_group = Default psiTurk Foraging
+psiturk_keywords = foraging, decision-making, learning, uncertainty
+organization_name = University of California, Irvine
+browser_exclude_rule = MSIE, mobile, tablet
+allow_repeats = false
+
+[Database Parameters]
+database_url = sqlite:///participants.db
+table_name = foraging
+
+[Server Parameters]
+host = 0.0.0.0
+port = 20455
+cutoff_time = 60
+logfile = server.log
+loglevel = 2
+debug = true
+login_username = default
+login_pw = default
+threads = auto
+secret_key = 'this is my secret key which is hard to guess, i should change this'
+#certfile = <path_to.crt>
+#keyfile = <path_to.key>
+#adserver_revproxy_host = www.location.of.your.revproxy.sans.protocol.com
+#adserver_revproxy_port = 80 # defaults to 80
+#server_timeout = 30
+
+[Task Parameters]
+experiment_code_version = 1.0
+num_conds = 1
+num_counters = 1
+
+[Shell Parameters]
+launch_in_sandbox_mode = true
+persistent_history_file = .psiturk_history
+bonus_message = Thanks for participating!
+
+# If you are not using the psiturk ad server, set `use_psiturk_ad_server` to `false` and point `ad_location` to your proxy server <host> and <port>. Format the ad_location like this:
+#
+#   https://<host>:<port>/ad
+
+use_psiturk_ad_server = true
+ad_location = false
