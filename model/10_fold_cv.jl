@@ -100,7 +100,7 @@ function return_fold_loss(behavior,ref_points,fold)
     return sse
 end
 
-function opt_params(model="adaptive_discount",n_sims=30,num_particles=1) 
+function opt_params(model="adaptive_discount",n_sims=50,num_particles=1) 
     println("start opt")
     sub_num = parse(Int64,ARGS[1])
     sub_data = get_sub_data(sub_num)
