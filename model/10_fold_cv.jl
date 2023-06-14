@@ -70,19 +70,21 @@ end
 
 function loss_function(params,n_sims=30,num_particles=1) # adaptive discount = 30
     sub_num = parse(Int64,ARGS[1])
+    model_num = parse(Int64,ARGS[2])
+
     sub_data = get_sub_data(sub_num)
     sub_ref_points = get_sub_ref_point_fold(sub_num,fold_num)
     filter!(row -> row.dataset == "train", sub_ref_points)
 
     all_sse = 0
     for i in 1:n_sims
-            if cmp(model,"adaptive_discount")
-                b = crp_adaptiveDiscount(sub_data,params,num_particles);
-            elseif cmp(model,"mvt")
-                b = MVT_learn(sub_data,params);
-            elseif cmp(model,"td")
-                b = TD(sub_data,params);
-            end
+        if model_num==1
+            b = crp_adaptiveDiscount(sub_data,params,num_particles);
+        elseif model_num==2
+            b = MVT_learn(sub_data,params);
+        elseif model_num==3
+            b = TD(sub_data,params);
+        end
         all_sse += return_loss(b,sub_ref_points)
     end
     return all_sse/n_sims
@@ -108,6 +110,7 @@ end
 function opt_params(model="adaptive_discount",n_sims=50,num_particles=1) 
     println("start opt")
     sub_num = parse(Int64,ARGS[1])
+    model_num = parse(Int64,ARGS[2])
     sub_data = get_sub_data(sub_num)
     all_loss = []
     for fold in 1:10
@@ -117,11 +120,11 @@ function opt_params(model="adaptive_discount",n_sims=50,num_particles=1)
         sub_ref_points = get_sub_ref_point_fold(sub_num,fold_num)
         filter!(row -> row.dataset == "test", sub_ref_points)
         for i in 1:n_sims
-            if cmp(model,"adaptive_discount")
+            if model_num==1
                 b = crp_adaptiveDiscount(sub_data,params,num_particles);
-            elseif cmp(model,"mvt")
+            elseif model_num==2
                 b = MVT_learn(sub_data,params);
-            elseif cmp(model,"td")
+            elseif model_num==3
                 b = TD(sub_data,params);
             end
             append!(fold_loss,return_fold_loss(b,sub_ref_points,fold_num))
