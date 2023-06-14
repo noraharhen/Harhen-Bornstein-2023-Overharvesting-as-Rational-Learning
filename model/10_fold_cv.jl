@@ -76,8 +76,13 @@ function loss_function(params,n_sims=30,num_particles=1) # adaptive discount = 3
 
     all_sse = 0
     for i in 1:n_sims
-        #b = crp_adaptiveDiscount(sub_data,params,num_particles)
-        b = MVT_learn(sub_data,params)
+            if cmp(model,"adaptive_discount")
+                b = crp_adaptiveDiscount(sub_data,params,num_particles);
+            elseif cmp(model,"mvt")
+                b = MVT_learn(sub_data,params);
+            elseif cmp(model,"td")
+                b = TD(sub_data,params);
+            end
         all_sse += return_loss(b,sub_ref_points)
     end
     return all_sse/n_sims
