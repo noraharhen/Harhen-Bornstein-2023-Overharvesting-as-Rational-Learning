@@ -430,24 +430,3 @@ function TD(data,params)
     return behav
 end
 
-########################### RUN MODEL AND SAVE ##################################
-
-function get_sub_data(sub_num)
-    all_data=DataFrame(CSV.File("data/all_data_dataset_2022.csv",delim=','))
-    sub_data = all_data[in(sub_num).(all_data.sub_num),:]
-end
-
-function run_model(sub_num,params,num_particles=1)
-    # data to fit
-    sub_data = get_sub_data(sub_num)
-    # run model
-    b = crp(sub_data,params,num_particles)
-    opt_prt = optimal_policy(b)
-    diff = b.prt - opt_prt
-
-    # put in dataframe and save
-    df = DataFrame(Dict("true_planet"=> b.true_planet,"galaxy"=> b.galaxy,"prt"=>b.prt,
-        "opt_prt"=>opt_prt, "diff" => diff))
-    save(string("savd_jld/sub",string(sub_num),".jld"), "df", df)
-    return df
-end
