@@ -431,6 +431,6 @@ function TD(data,params)
 end
 
 function get_sub_data(sub_num)
-    all_data=DataFrame(CSV.File("all_data.csv",delim=','))
+    all_data=DataFrame(CSV.File("data/all_data_dataset_2022.csv",delim=','))
     sub_data = all_data[in(sub_num).(all_data.sub_num),:]
 end
