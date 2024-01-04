@@ -430,3 +430,7 @@ function TD(data,params)
     return behav
 end
 
+function get_sub_data(sub_num)
+    all_data=DataFrame(CSV.File("all_data.csv",delim=','))
+    sub_data = all_data[in(sub_num).(all_data.sub_num),:]
+end
